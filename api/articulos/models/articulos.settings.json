@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articulos",
+  "info": {
+    "name": "Articulos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "tipo": {
+      "type": "enumeration",
+      "enum": [
+        "guitarra",
+        "tambor",
+        "piano",
+        "viento"
+      ]
+    },
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "precio": {
+      "type": "integer",
+      "required": true
+    },
+    "descripcion": {
+      "type": "richtext",
+      "required": true
+    },
+    "imagen": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "nombre"
+    }
+  }
+}
