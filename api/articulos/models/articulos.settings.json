@@ -46,6 +46,11 @@
     "url": {
       "type": "uid",
       "targetField": "nombre"
+    },
+    "stock": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     }
   }
 }
